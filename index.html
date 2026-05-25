@@ -1,21 +1,460 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SingLift</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>SingLift — Vocal Stability Instrument</title>
+
+  <meta
+    name="description"
+    content="SingLift is a vocal stability instrument by Blue Arc Studio. Measure voice steadiness in real time with on-device microphone analysis."
+  />
+
+  <meta
+    name="keywords"
+    content="SingLift, vocal stability, voice steadiness, vocal stability instrument, voice stability meter, long-tone practice, voice practice app, singing practice, microphone analysis, Blue Arc Studio"
+  />
+
+  <meta name="author" content="Blue Arc Studio" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://singlift.app/" />
+
+  <meta property="og:title" content="SingLift — Vocal Stability Instrument" />
+  <meta
+    property="og:description"
+    content="Measure voice steadiness in real time. A simple vocal stability instrument by Blue Arc Studio."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://singlift.app/" />
+  <meta property="og:site_name" content="SingLift" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SingLift — Vocal Stability Instrument" />
+  <meta
+    name="twitter:description"
+    content="A real-time vocal stability instrument for voice steadiness and long-tone practice."
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SingLift",
+    "applicationCategory": "MusicApplication",
+    "operatingSystem": "Android",
+    "description": "SingLift is a vocal stability instrument that measures voice steadiness in real time.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Blue Arc Studio",
+      "url": "https://bluearcstudio.com"
+    },
+    "url": "https://singlift.app/",
+    "privacyPolicy": "https://singlift.app/privacy/"
+  }
+  </script>
+
+  <style>
+    :root {
+      --page-bg: #f4f3f0;
+      --card-bg: #ffffff;
+      --ink: #1c1c1e;
+      --muted: #626872;
+      --soft-muted: #8b9098;
+      --line: #e5e0d8;
+      --accent: #1f4f75;
+      --accent-dark: #153b59;
+      --accent-soft: #edf5fa;
+      --panel: #fbfaf8;
+      --shadow: rgba(24, 31, 38, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(31, 79, 117, 0.10), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(31, 79, 117, 0.07), transparent 34%),
+        var(--page-bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      text-underline-offset: 4px;
+      font-weight: 650;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 28px 72px;
+    }
+
+    .nav {
+      max-width: 980px;
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 72px 74px;
+      box-shadow: 0 24px 70px var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      right: -160px;
+      top: -160px;
+      border-radius: 50%;
+      background: rgba(31, 79, 117, 0.08);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid #d8e7f1;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+    }
+
+    .lead {
+      max-width: 650px;
+      margin: 26px 0 0;
+      color: #30343a;
+      font-size: 20px;
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .button:hover,
+    .button:focus {
+      background: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      color: var(--accent);
+      border-color: #c8dbe8;
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus {
+      background: var(--accent-soft);
+    }
+
+    .note {
+      max-width: 640px;
+      margin: 22px 0 0;
+      color: var(--soft-muted);
+      font-size: 14px;
+    }
+
+    .section {
+      max-width: 980px;
+      margin: 28px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px 26px;
+      box-shadow: 0 12px 36px rgba(24, 31, 38, 0.04);
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .wide {
+      max-width: 980px;
+      margin: 28px auto 0;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 38px 42px;
+    }
+
+    .wide h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: -0.035em;
+    }
+
+    .wide p {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16.5px;
+    }
+
+    .footer {
+      max-width: 980px;
+      margin: 34px auto 0;
+      padding: 28px 4px 0;
+      border-top: 1px solid rgba(229, 224, 216, 0.85);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--soft-muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        padding: 24px 16px 52px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding: 46px 28px;
+        border-radius: 28px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      .section {
+        grid-template-columns: 1fr;
+      }
+
+      .wide {
+        padding: 30px 26px;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .page {
+        padding: 18px 12px 42px;
+      }
+
+      .hero {
+        padding: 38px 22px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+      }
+
+      .lead {
+        font-size: 16.5px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .panel {
+        padding: 24px 22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>SingLift</h1>
+  <main class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="brand">Blue Arc Studio</div>
+      <div class="nav-links">
+        <a href="https://singlift.app/privacy/">Privacy Policy</a>
+        <a href="mailto:support@bluearcstudio.com">Contact</a>
+      </div>
+    </nav>
 
-  <p>
-    SingLift is a vocal stability instrument by Blue Arc Studio.
-  </p>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="eyebrow">Vocal Stability Instrument</div>
 
-  <p>
-    <a href="https://bluearcstudio.github.io/singlift-site/privacy/">
-      Privacy Policy
-    </a>
-  </p>
+      <h1 id="hero-title">
+        Measure voice steadiness in real time.
+      </h1>
+
+      <p class="lead">
+        SingLift is a simple Android instrument for observing vocal stability
+        while you sustain your voice. It is designed for focused long-tone
+        practice and real-time voice steadiness feedback.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="https://singlift.app/privacy/">
+          Privacy Policy
+        </a>
+        <a class="button secondary" href="mailto:support@bluearcstudio.com">
+          Contact Support
+        </a>
+      </div>
+
+      <p class="note">
+        SingLift uses microphone access for real-time measurement. Voice analysis
+        is performed on your device.
+      </p>
+    </section>
+
+    <section class="section" aria-label="SingLift features">
+      <article class="panel">
+        <h2>Real-time feedback</h2>
+        <p>
+          Watch vocal stability respond as you sustain your voice.
+        </p>
+      </article>
+
+      <article class="panel">
+        <h2>Simple states</h2>
+        <p>
+          WEAK, FAIR, and STRONG make voice steadiness easy to read at a glance.
+        </p>
+      </article>
+
+      <article class="panel">
+        <h2>On-device processing</h2>
+        <p>
+          Voice measurement happens locally on your device. No account is
+          required.
+        </p>
+      </article>
+    </section>
+
+    <section class="wide" aria-labelledby="about-title">
+      <h2 id="about-title">
+        Built for focused voice practice.
+      </h2>
+      <p>
+        SingLift is not a game or a singing score app. It is a focused vocal
+        stability meter created to help users observe how steadily they can hold
+        their voice during sustained vocal practice.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div>
+        © 2026 Blue Arc Studio.
+      </div>
+      <div class="footer-links">
+        <a href="https://singlift.app/privacy/">Privacy Policy</a>
+        <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
