@@ -60,13 +60,16 @@
 
   <style>
     :root {
-      --bg: #f4f3f1;
-      --card: #ffffff;
+      --page-bg: #f4f3f0;
+      --card-bg: #ffffff;
       --ink: #1c1c1e;
-      --muted: #5f6368;
+      --muted: #666a70;
+      --soft-muted: #8a8f98;
       --line: #e3dfd8;
       --accent: #1f4f75;
       --accent-soft: #eef5fa;
+      --section-bg: #fbfaf8;
+      --shadow: rgba(24, 31, 38, 0.08);
     }
 
     * {
@@ -79,151 +82,233 @@
 
     body {
       margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(31, 79, 117, 0.08), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(31, 79, 117, 0.06), transparent 34%),
+        var(--page-bg);
+      color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.7;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     .page {
-      max-width: 920px;
+      width: 100%;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 48px 20px 72px;
+      padding: 72px 28px 96px;
     }
 
     .card {
-      background: var(--card);
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.05);
+      border-radius: 32px;
+      padding: 64px 72px;
+      box-shadow: 0 24px 70px var(--shadow);
     }
 
     header {
-      margin-bottom: 36px;
-      padding-bottom: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 36px;
       border-bottom: 1px solid var(--line);
     }
 
     .brand {
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      margin-bottom: 12px;
       color: var(--muted);
-      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      font-size: 40px;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+      color: var(--ink);
     }
 
     .subtitle {
-      margin-top: 12px;
+      margin: 18px auto 0;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 18px;
+      line-height: 1.55;
     }
 
     .updated {
-      margin-top: 18px;
-      color: var(--muted);
+      margin: 22px auto 0;
+      color: var(--soft-muted);
       font-size: 14px;
     }
 
-    h2 {
-      margin-top: 34px;
-      margin-bottom: 10px;
-      font-size: 22px;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
+    .summary {
+      margin: 0 auto 42px;
+      padding: 28px 32px;
+      background: var(--accent-soft);
+      border: 1px solid #d8e7f1;
+      border-radius: 22px;
     }
 
-    p {
-      margin: 0 0 16px;
+    .summary p {
+      margin: 0;
       font-size: 16px;
     }
 
-    ul {
-      margin: 8px 0 18px;
-      padding-left: 22px;
-    }
-
-    li {
-      margin: 8px 0;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .summary {
-      background: var(--accent-soft);
-      border: 1px solid #dce8f2;
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin: 24px 0;
-    }
-
     .toc {
-      background: #fafafa;
+      margin: 0 auto 52px;
+      padding: 28px 32px;
+      background: var(--section-bg);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin: 24px 0 34px;
+      border-radius: 22px;
     }
 
     .toc h2 {
-      margin-top: 0;
-      font-size: 19px;
+      margin: 0 0 16px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
     }
 
     .toc ol {
-      margin: 8px 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 28px;
+      row-gap: 8px;
+      margin: 0;
       padding-left: 22px;
     }
 
     .toc li {
-      margin: 6px 0;
+      margin: 0;
       color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 10px 0 26px;
+    }
+
+    section + section {
+      border-top: 1px solid rgba(227, 223, 216, 0.65);
+    }
+
+    h2 {
+      margin: 28px 0 14px;
+      color: var(--ink);
+      font-size: 23px;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      margin: 0 0 17px;
+      color: #2b2d31;
+      font-size: 16.5px;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 650;
+      text-decoration: none;
+      text-underline-offset: 4px;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
     }
 
     .footer {
-      margin-top: 40px;
-      padding-top: 24px;
+      max-width: 680px;
+      margin: 42px auto 0;
+      padding-top: 28px;
       border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer p {
+      margin: 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .footer p {
-      font-size: 14px;
-    }
-
-    @media (max-width: 640px) {
+    @media (max-width: 760px) {
       .page {
-        padding: 24px 14px 48px;
+        padding: 28px 14px 48px;
       }
 
       .card {
-        padding: 26px 20px;
-        border-radius: 20px;
+        border-radius: 24px;
+        padding: 34px 22px 42px;
       }
 
-      h1 {
-        font-size: 32px;
+      header {
+        margin-bottom: 34px;
+        padding-bottom: 28px;
+      }
+
+      .summary,
+      .toc {
+        padding: 22px 20px;
+        border-radius: 18px;
+      }
+
+      .toc ol {
+        grid-template-columns: 1fr;
+        row-gap: 7px;
+      }
+
+      section {
+        max-width: 100%;
+        padding: 6px 2px 22px;
       }
 
       h2 {
-        font-size: 20px;
+        font-size: 21px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .page {
+        padding: 18px 10px 36px;
+      }
+
+      .card {
+        padding: 28px 18px 36px;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .summary p,
+      .toc li,
+      p {
+        font-size: 15.5px;
       }
     }
   </style>
