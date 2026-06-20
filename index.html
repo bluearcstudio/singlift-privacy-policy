@@ -4,55 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Privacy Policy | SingLift</title>
+  <title>SingLift — Vocal Stability Instrument</title>
 
   <meta
     name="description"
-    content="Privacy Policy for SingLift by Blue Arc Studio. Learn how microphone access, on-device processing, and voice data are handled."
+    content="SingLift is a vocal stability instrument for Android. Observe voice steadiness in real time with a calm, instrument-style interface designed for focused vocal practice."
   />
 
   <meta name="author" content="Blue Arc Studio" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f1420" />
 
-  <link rel="canonical" href="https://singlift.app/privacy/" />
+  <link rel="canonical" href="https://singlift.app/" />
 
-  <meta property="og:title" content="Privacy Policy | SingLift" />
+  <meta property="og:title" content="SingLift — Vocal Stability Instrument" />
   <meta
     property="og:description"
-    content="Learn how SingLift handles microphone access, on-device processing, and voice data."
+    content="Observe voice steadiness in real time with a calm instrument-style interface for focused vocal practice."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://singlift.app/privacy/" />
+  <meta property="og:url" content="https://singlift.app/" />
   <meta property="og:site_name" content="SingLift" />
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Privacy Policy | SingLift" />
+  <meta name="twitter:title" content="SingLift — Vocal Stability Instrument" />
   <meta
     name="twitter:description"
-    content="Privacy Policy for SingLift by Blue Arc Studio."
+    content="A vocal stability instrument for observing voice steadiness in real time."
   />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "PrivacyPolicy",
-    "name": "Privacy Policy for SingLift",
-    "url": "https://singlift.app/privacy/",
+    "@type": "SoftwareApplication",
+    "name": "SingLift",
+    "applicationCategory": "MusicApplication",
+    "operatingSystem": "Android",
+    "url": "https://singlift.app/",
+    "privacyPolicy": "https://singlift.app/privacy/",
     "publisher": {
       "@type": "Organization",
       "name": "Blue Arc Studio",
       "url": "https://bluearcstudio.com/",
       "email": "support@bluearcstudio.com"
     },
-    "about": {
-      "@type": "SoftwareApplication",
-      "name": "SingLift",
-      "applicationCategory": "MusicApplication",
-      "operatingSystem": "Android",
-      "description": "SingLift is a vocal stability instrument for observing voice steadiness in real time."
-    }
+    "description": "SingLift is a vocal stability instrument for observing voice steadiness in real time during focused vocal practice."
   }
   </script>
 
@@ -64,11 +61,12 @@
       --soft-muted: #8791a1;
       --line: #dce6ee;
       --dark: #0f1420;
+      --dark-2: #151d2c;
       --accent: #29c7ff;
       --accent-2: #55d9ff;
       --accent-dark: #0b5d84;
       --accent-soft: #eaf8ff;
-      --card: rgba(255, 255, 255, 0.94);
+      --card: rgba(255, 255, 255, 0.92);
       --shadow: rgba(15, 20, 32, 0.10);
       --shadow-soft: rgba(15, 20, 32, 0.06);
     }
@@ -82,7 +80,7 @@
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif;
-      line-height: 1.75;
+      line-height: 1.7;
       background:
         radial-gradient(circle at top left, rgba(41, 199, 255, 0.18), transparent 32%),
         radial-gradient(circle at bottom right, rgba(15, 20, 32, 0.10), transparent 34%),
@@ -105,13 +103,13 @@
 
     .page {
       width: 100%;
-      max-width: 1040px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 30px 28px 72px;
     }
 
     .nav {
-      max-width: 920px;
+      max-width: 1020px;
       margin: 0 auto 28px;
       display: flex;
       align-items: center;
@@ -149,14 +147,14 @@
     }
 
     .hero {
-      max-width: 920px;
+      max-width: 1020px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
       background: linear-gradient(135deg, rgba(15, 20, 32, 0.98), rgba(21, 29, 44, 0.96));
       border: 1px solid rgba(255, 255, 255, 0.10);
       border-radius: 36px;
-      padding: 56px 56px;
+      padding: 78px 78px;
       box-shadow: 0 28px 80px var(--shadow);
       color: #ffffff;
     }
@@ -179,7 +177,7 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       padding: 8px 13px;
       border: 1px solid rgba(85, 217, 255, 0.36);
       border-radius: 999px;
@@ -192,95 +190,196 @@
     }
 
     h1 {
+      max-width: 820px;
       margin: 0;
       color: #ffffff;
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
     }
 
-    .subtitle {
-      max-width: 680px;
-      margin: 18px 0 0;
+    .lead {
+      max-width: 730px;
+      margin: 26px 0 0;
       color: rgba(255, 255, 255, 0.78);
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.65;
     }
 
-    .updated {
-      margin-top: 18px;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #07101a;
+      font-size: 15px;
+      font-weight: 850;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(41, 199, 255, 0.22);
+    }
+
+    .button:hover,
+    .button:focus {
+      background: var(--accent-2);
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.24);
+      box-shadow: none;
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus {
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .note {
+      max-width: 730px;
+      margin: 22px 0 0;
       color: rgba(255, 255, 255, 0.58);
       font-size: 14px;
     }
 
-    .summary,
-    .toc,
-    .content-card {
-      max-width: 920px;
+    .section-grid {
+      max-width: 1020px;
       margin: 28px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .panel,
+    .wide,
+    .contact-card,
+    .faq-card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 34px 38px;
       box-shadow: 0 14px 40px var(--shadow-soft);
       backdrop-filter: blur(8px);
     }
 
-    .summary p {
+    .panel {
+      border-radius: 26px;
+      padding: 30px 28px;
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+    }
+
+    .panel p {
       margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .wide,
+    .contact-card,
+    .faq-card {
+      max-width: 1020px;
+      margin: 28px auto 0;
+      border-radius: 30px;
+      padding: 40px 44px;
+    }
+
+    .wide h2,
+    .contact-card h2,
+    .faq-card h2 {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: -0.035em;
+    }
+
+    .wide p,
+    .contact-card p,
+    .faq-card p {
+      max-width: 800px;
+      margin: 0 0 16px;
       color: var(--muted);
       font-size: 16.5px;
     }
 
-    .toc h2,
-    .content-card h2 {
-      margin: 0 0 14px;
+    .wide p:last-child,
+    .contact-card p:last-child,
+    .faq-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid #ccecff;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .faq-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .faq-item {
+      padding: 20px 20px;
+      border-radius: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 8px;
       color: var(--ink);
-      font-size: 26px;
-      line-height: 1.25;
-      letter-spacing: -0.03em;
-    }
-
-    .toc ol {
-      margin: 0;
-      padding-left: 22px;
-      columns: 2;
-      column-gap: 40px;
-    }
-
-    .toc li {
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: 15.5px;
-      break-inside: avoid;
-    }
-
-    .policy-section {
-      padding: 20px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .policy-section:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .policy-section h3 {
-      margin: 0 0 10px;
-      color: var(--ink);
-      font-size: 21px;
-      line-height: 1.35;
+      font-size: 18px;
+      line-height: 1.4;
       letter-spacing: -0.02em;
     }
 
-    .policy-section p {
-      margin: 0 0 14px;
+    .faq-item p {
+      margin: 0;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 15.5px;
     }
 
-    .policy-section p:last-child {
-      margin-bottom: 0;
+    .disclaimer {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .email-box {
@@ -298,7 +397,7 @@
     }
 
     .footer {
-      max-width: 920px;
+      max-width: 1020px;
       margin: 34px auto 0;
       padding: 28px 4px 0;
       border-top: 1px solid rgba(164, 176, 190, 0.40);
@@ -323,40 +422,41 @@
         align-items: flex-start;
       }
 
-      .nav-links {
-        justify-content: flex-start;
-      }
+      .nav-links { justify-content: flex-start; }
 
       .hero {
-        padding: 42px 28px;
+        padding: 52px 30px;
         border-radius: 30px;
       }
 
-      .summary,
-      .toc,
-      .content-card {
-        padding: 28px 24px;
+      .lead { font-size: 18px; }
+
+      .section-grid,
+      .faq-list {
+        grid-template-columns: 1fr;
       }
 
-      .toc ol {
-        columns: 1;
+      .wide,
+      .contact-card,
+      .faq-card {
+        padding: 32px 28px;
       }
 
-      .footer {
-        flex-direction: column;
-      }
+      .footer { flex-direction: column; }
     }
 
     @media (max-width: 480px) {
       .page { padding: 18px 12px 42px; }
 
-      .hero {
-        padding: 34px 22px;
-      }
+      .hero { padding: 42px 22px; }
 
-      .subtitle {
-        font-size: 16.5px;
-      }
+      .eyebrow { font-size: 12px; }
+
+      .lead { font-size: 16.5px; }
+
+      .actions { flex-direction: column; }
+
+      .button { width: 100%; }
 
       .email-box {
         width: 100%;
@@ -377,188 +477,148 @@
       </div>
 
       <div class="nav-links">
-        <a href="https://singlift.app/">Home</a>
-        <a href="#policy">Policy</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://singlift.app/privacy/">Privacy Policy</a>
         <a href="https://bluearcstudio.com/">Blue Arc Studio</a>
       </div>
     </nav>
 
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
-        <div class="eyebrow">Privacy Policy</div>
+        <div class="eyebrow">Vocal Stability Instrument</div>
 
         <h1 id="hero-title">
-          Privacy Policy for SingLift
+          Observe voice steadiness in real time.
         </h1>
 
-        <p class="subtitle">
-          This page explains how SingLift handles microphone access, voice input,
-          and on-device processing.
+        <p class="lead">
+          SingLift is a focused Android instrument for observing vocal stability
+          during sustained voice practice. It offers calm, real-time feedback
+          in a simple interface designed for repeatable daily use.
         </p>
 
-        <p class="updated">
-          Last updated: June 21, 2026
+        <div class="actions">
+          <a class="button" href="https://singlift.app/privacy/">
+            Privacy Policy
+          </a>
+          <a class="button secondary" href="https://bluearcstudio.com/">
+            Blue Arc Studio
+          </a>
+        </div>
+
+        <p class="note">
+          Support email: <strong>support@bluearcstudio.com</strong>
         </p>
       </div>
     </section>
 
-    <section class="summary" aria-label="Policy summary">
-      <p>
-        <strong>Summary:</strong> SingLift uses microphone access to observe vocal
-        stability in real time. Voice analysis happens locally on your device.
-        SingLift does not collect, store, upload, or share voice recordings.
-      </p>
-    </section>
-
-    <section class="toc" aria-label="Table of contents">
-      <h2>Contents</h2>
-      <ol>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#developer">Developer</a></li>
-        <li><a href="#microphone-access">Microphone Access</a></li>
-        <li><a href="#on-device-processing">On-device Processing</a></li>
-        <li><a href="#voice-data">Voice Data</a></li>
-        <li><a href="#account-information">Account Information</a></li>
-        <li><a href="#data-collection">Data Collection</a></li>
-        <li><a href="#data-sharing">Data Sharing</a></li>
-        <li><a href="#children">Children</a></li>
-        <li><a href="#security">Security</a></li>
-        <li><a href="#changes">Changes to This Privacy Policy</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ol>
-    </section>
-
-    <section id="policy" class="content-card" aria-labelledby="policy-title">
-      <h2 id="policy-title">Privacy Policy</h2>
-
-      <div id="overview" class="policy-section">
-        <h3>1. Overview</h3>
+    <section id="features" class="section-grid" aria-label="SingLift features">
+      <article class="panel">
+        <h2>Real-time feedback</h2>
         <p>
-          SingLift is a vocal stability instrument developed by Blue Arc Studio.
-          It is designed to help users observe voice steadiness in real time
-          during focused vocal practice.
+          Observe how steadily you sustain your voice with immediate visual response.
         </p>
-        <p>
-          This Privacy Policy explains how SingLift handles information when you use the app.
-        </p>
-      </div>
+      </article>
 
-      <div id="developer" class="policy-section">
-        <h3>2. Developer</h3>
+      <article class="panel">
+        <h2>Simple states</h2>
         <p>
-          Developer: <strong>Blue Arc Studio</strong>
+          WEAK, FAIR, and STRONG provide clear feedback for focused vocal practice.
         </p>
-        <p>
-          Contact:
-          <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
-        </p>
-      </div>
+      </article>
 
-      <div id="microphone-access" class="policy-section">
-        <h3>3. Microphone Access</h3>
-        <p>
-          SingLift requires microphone access to observe vocal stability in real time.
-        </p>
-        <p>
-          The microphone is used only for the core function of the app: processing
-          voice input locally and displaying real-time feedback.
-        </p>
-      </div>
-
-      <div id="on-device-processing" class="policy-section">
-        <h3>4. On-device Processing</h3>
+      <article class="panel">
+        <h2>On-device processing</h2>
         <p>
           Voice analysis is processed locally on your device during use.
         </p>
-        <p>
-          SingLift does not send microphone audio or voice recordings to Blue Arc Studio
-          servers or to any external server for cloud-based analysis.
-        </p>
+      </article>
+    </section>
+
+    <section id="about" class="wide" aria-labelledby="about-title">
+      <h2 id="about-title">
+        What SingLift is for
+      </h2>
+
+      <p>
+        SingLift is designed for long-tone practice, vocal training, pitch stability
+        observation, and daily repetition. It is not a pitch scoring app and it does not
+        attempt to judge musical performance.
+      </p>
+
+      <p>
+        Instead, SingLift helps users observe vocal steadiness, sustained voice behavior,
+        and repeatable control in a simple, instrument-style format.
+      </p>
+
+      <div class="chip-row" aria-label="SingLift keywords">
+        <span class="chip">Vocal stability</span>
+        <span class="chip">Voice steadiness</span>
+        <span class="chip">Long-tone practice</span>
+        <span class="chip">Android</span>
+        <span class="chip">Focused practice</span>
       </div>
 
-      <div id="voice-data" class="policy-section">
-        <h3>5. Voice Data</h3>
-        <p>
-          SingLift does not collect, store, upload, or share voice recordings.
-        </p>
-        <p>
-          Microphone input is processed temporarily on your device in order to provide
-          real-time vocal stability feedback.
-        </p>
-      </div>
+      <p class="disclaimer">
+        SingLift is intended as a practice and observation tool. It is not a medical,
+        diagnostic, or professional evaluation device.
+      </p>
+    </section>
 
-      <div id="account-information" class="policy-section">
-        <h3>6. Account Information</h3>
-        <p>
-          SingLift does not require account creation.
-        </p>
-        <p>
-          The app does not collect your name, email address, login credentials,
-          or account profile information through in-app registration.
-        </p>
-      </div>
+    <section id="faq" class="faq-card" aria-labelledby="faq-title">
+      <h2 id="faq-title">
+        Frequently Asked Questions
+      </h2>
 
-      <div id="data-collection" class="policy-section">
-        <h3>7. Data Collection</h3>
-        <p>
-          The current version of SingLift does not collect personal data through the app.
-        </p>
-        <p>
-          The current version does not use advertising SDKs, analytics SDKs,
-          or cloud-based voice processing.
-        </p>
-      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Why does the meter move during vibrato?</h3>
+          <p>
+            This is expected behavior. Vibrato includes intentional variation, which may
+            appear as natural movement in the response.
+          </p>
+        </div>
 
-      <div id="data-sharing" class="policy-section">
-        <h3>8. Data Sharing</h3>
-        <p>
-          SingLift does not sell personal data.
-        </p>
-        <p>
-          SingLift does not share voice recordings with third parties because
-          voice recordings are not collected by the app.
-        </p>
-      </div>
+        <div class="faq-item">
+          <h3>Why does the value drop?</h3>
+          <p>
+            Short interruptions, unstable pitch, background noise, or microphone positioning
+            may affect the response.
+          </p>
+        </div>
 
-      <div id="children" class="policy-section">
-        <h3>9. Children</h3>
-        <p>
-          SingLift is not specifically directed to children. The app does not knowingly
-          collect personal information from children.
-        </p>
-      </div>
+        <div class="faq-item">
+          <h3>Do I need an internet connection?</h3>
+          <p>
+            No. Voice analysis is processed locally on your device during use.
+          </p>
+        </div>
 
-      <div id="security" class="policy-section">
-        <h3>10. Security</h3>
-        <p>
-          SingLift is designed so that voice processing happens locally on your device.
-          Because microphone audio is not uploaded to Blue Arc Studio servers,
-          voice recordings are not stored by Blue Arc Studio.
-        </p>
+        <div class="faq-item">
+          <h3>Is this a pitch scoring app?</h3>
+          <p>
+            No. SingLift is designed to observe vocal steadiness and repeatability, not
+            musical scoring.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div id="changes" class="policy-section">
-        <h3>11. Changes to This Privacy Policy</h3>
-        <p>
-          We may update this Privacy Policy if the app's features, data handling,
-          or legal requirements change.
-        </p>
-        <p>
-          If we make changes, we will update the “Last updated” date at the top of this page.
-        </p>
-      </div>
+    <section class="contact-card" aria-labelledby="contact-title">
+      <h2 id="contact-title">
+        Contact
+      </h2>
 
-      <div id="contact" class="policy-section">
-        <h3>12. Contact Us</h3>
-        <p>
-          If you have questions about this Privacy Policy or SingLift's privacy practices,
-          please contact us by email.
-        </p>
+      <p>
+        For support requests, privacy-related inquiries, or questions about SingLift,
+        please contact us by email.
+      </p>
 
-        <a class="email-box" href="mailto:support@bluearcstudio.com">
-          support@bluearcstudio.com
-        </a>
-      </div>
+      <a class="email-box" href="mailto:support@bluearcstudio.com">
+        support@bluearcstudio.com
+      </a>
     </section>
 
     <footer class="footer">
@@ -567,8 +627,8 @@
       </div>
 
       <div class="footer-links">
-        <a href="https://singlift.app/">SingLift</a>
         <a href="https://bluearcstudio.com/">Blue Arc Studio</a>
+        <a href="https://singlift.app/privacy/">Privacy Policy</a>
         <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
       </div>
     </footer>
