@@ -1,11 +1,67 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>FAQ / Technical Note | SingLift</title>
-  <meta name="description" content="FAQ and technical note for SingLift, a real-time vocal stability and voice steadiness meter.">
-  <meta name="robots" content="index, follow">
+
+  <meta
+    name="description"
+    content="FAQ and technical note for SingLift, a real-time vocal stability and voice steadiness meter."
+  />
+
+  <meta name="author" content="Blue Arc Studio" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f1420" />
+
+  <link rel="canonical" href="https://singlift.app/technical-note/" />
+
+  <meta property="og:title" content="FAQ / Technical Note | SingLift" />
+  <meta
+    property="og:description"
+    content="Learn what SingLift measures, how vocal stability is calculated, and how to understand WEAK, FAIR, and STRONG."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://singlift.app/technical-note/" />
+  <meta property="og:site_name" content="SingLift" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="FAQ / Technical Note | SingLift" />
+  <meta
+    name="twitter:description"
+    content="Technical note for SingLift, a real-time vocal stability and voice steadiness meter."
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "FAQ / Technical Note for SingLift",
+    "name": "FAQ / Technical Note for SingLift",
+    "url": "https://singlift.app/technical-note/",
+    "author": {
+      "@type": "Organization",
+      "name": "Blue Arc Studio",
+      "url": "https://bluearcstudio.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Blue Arc Studio",
+      "url": "https://bluearcstudio.com/",
+      "email": "support@bluearcstudio.com"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "SingLift",
+      "applicationCategory": "MusicApplication",
+      "operatingSystem": "Android",
+      "url": "https://singlift.app/"
+    },
+    "description": "FAQ and technical note for SingLift, a real-time vocal stability and voice steadiness meter."
+  }
+  </script>
 
   <style>
     :root {
@@ -23,20 +79,29 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
       color: var(--accent);
+      font-weight: 700;
       text-decoration: none;
+      text-underline-offset: 4px;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
       text-decoration: underline;
     }
 
@@ -172,6 +237,13 @@
       font-size: 14px;
     }
 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
     @media (max-width: 680px) {
       .page {
         padding: 28px 16px 48px;
@@ -207,6 +279,7 @@
         <a href="https://singlift.app/">SingLift Home</a>
         <a href="https://singlift.app/privacy/">Privacy Policy</a>
         <a href="https://bluearcstudio.com/">Blue Arc Studio</a>
+        <a href="mailto:support@bluearcstudio.com">Contact</a>
       </nav>
     </header>
 
@@ -358,14 +431,16 @@
 
     <footer>
       <p>
-        © Blue Arc Studio. SingLift is a real-time vocal stability and voice steadiness meter.
+        © 2026 Blue Arc Studio. SingLift is a real-time vocal stability and voice steadiness meter.
       </p>
-      <p>
-        Contact: <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
-      </p>
+
+      <div class="footer-links">
+        <a href="https://singlift.app/">SingLift Home</a>
+        <a href="https://singlift.app/privacy/">Privacy Policy</a>
+        <a href="https://bluearcstudio.com/">Blue Arc Studio</a>
+        <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
+      </div>
     </footer>
   </main>
 </body>
 </html>
-
-
