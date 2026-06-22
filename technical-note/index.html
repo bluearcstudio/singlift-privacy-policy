@@ -1,1 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ / Technical Note | SingLift</title>
+  <meta name="description" content="FAQ and technical note for SingLift, a real-time vocal stability and voice steadiness meter.">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --bg: #0F1420;
+      --panel: #171D2B;
+      --text: #F2F5F8;
+      --muted: #AAB4C3;
+      --line: #2B3447;
+      --accent: #3CFF8F;
+      --accent-soft: rgba(60, 255, 143, 0.12);
+      --warning: #FFD166;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+    }
+
+    .brand {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0;
+    }
+
+    nav {
+      margin: 24px 0 0;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      margin: 22px 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 1.3;
+      margin: 0 0 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 24px 0 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .formula {
+      margin: 18px 0;
+      padding: 18px;
+      background: #0B101A;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 16px;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      color: var(--text);
+    }
+
+    .disclaimer {
+      margin-top: 18px;
+      padding: 16px 18px;
+      background: rgba(255, 209, 102, 0.10);
+      border-left: 4px solid var(--warning);
+      border-radius: 12px;
+      color: var(--text);
+    }
+
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .state-card {
+      background: #0B101A;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .state-card strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        padding: 28px 16px 48px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .state-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">SingLift by Blue Arc Studio</div>
+      <h1>FAQ / Technical Note</h1>
+      <p class="lead">
+        SingLift is a real-time vocal stability and voice steadiness meter.
+        This page explains what the app measures, how the stability value is calculated,
+        and how to understand the displayed states.
+      </p>
+
+      <nav aria-label="Page navigation">
+        <a href="https://singlift.app/">SingLift Home</a>
+        <a href="https://singlift.app/privacy/">Privacy Policy</a>
+        <a href="https://bluearcstudio.com/">Blue Arc Studio</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>What does SingLift measure?</h2>
+      <p>
+        SingLift measures short-term vocal steadiness while you are producing a continuous voice.
+        It analyzes pitch movement in real time and displays a simple stability state.
+      </p>
+
+      <div class="state-grid">
+        <div class="state-card">
+          <strong>WEAK</strong>
+          <span>The voice is not stable enough yet, or the input is not suitable for measurement.</span>
+        </div>
+        <div class="state-card">
+          <strong>FAIR</strong>
+          <span>The voice is reasonably steady during the current measurement window.</span>
+        </div>
+        <div class="state-card">
+          <strong>STRONG</strong>
+          <span>The voice has remained steadily maintained for the required duration.</span>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        SingLift is designed as a vocal stability meter. It is not a medical device,
+        diagnostic tool, or a replacement for professional voice training.
+      </div>
+    </section>
+
+    <section>
+      <h2>How is vocal stability calculated?</h2>
+      <p>
+        SingLift estimates stability from short-term pitch variation.
+        In simple terms, if the detected pitch stays more consistent during a measurement window,
+        the stability value becomes higher. If the pitch fluctuates more, the stability value becomes lower.
+      </p>
+
+      <p>
+        For transparency, the current version uses the following stability calculation:
+      </p>
+
+      <div class="formula" aria-label="Stability formula">
+        Stability = 1 / (1 + 20 × (σ / μ))
+      </div>
+
+      <p>Where:</p>
+      <ul>
+        <li><strong>μ</strong> is the average detected pitch within the measurement window.</li>
+        <li><strong>σ</strong> is the pitch variation within the measurement window.</li>
+        <li><strong>σ / μ</strong> represents relative pitch variation.</li>
+      </ul>
+
+      <div class="note">
+        This means SingLift focuses on relative pitch steadiness, rather than simply judging
+        whether a voice is high or low.
+      </div>
+    </section>
+
+    <section>
+      <h2>What does STRONG mean?</h2>
+      <p>
+        STRONG means that the detected voice has remained stable enough for a short continuous period.
+        It is not based on a single instant.
+      </p>
+
+      <p>
+        If you stop your voice, take a breath, sing too softly, or the detected pitch becomes unclear,
+        STRONG may disappear. This is normal behavior because SingLift measures the voice being produced
+        at that moment.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why does SingLift sometimes show no pitch or stability value?</h2>
+      <p>
+        SingLift only displays pitch and stability when the input is suitable for measurement.
+        This helps avoid showing unstable or unreliable measurement values as if they were valid results.
+      </p>
+
+      <p>Pitch or stability may not be shown when:</p>
+      <ul>
+        <li>The voice is too quiet.</li>
+        <li>The pitch is unclear.</li>
+        <li>The detected pitch is changing too irregularly.</li>
+        <li>There is not enough stable voice data yet.</li>
+        <li>The microphone input is affected by noise.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Does SingLift record or store my voice?</h2>
+      <p>
+        No. SingLift processes microphone input on the device for real-time measurement.
+        The app does not store voice recordings and does not upload voice recordings to a server.
+      </p>
+    </section>
+
+    <section>
+      <h2>Is SingLift a medical or diagnostic tool?</h2>
+      <p>
+        No. SingLift is not a medical device and does not diagnose voice conditions,
+        health conditions, or vocal disorders.
+      </p>
+
+      <p>
+        It is a simple real-time tool for observing vocal steadiness during voice practice,
+        singing, speaking, or tone control exercises.
+      </p>
+    </section>
+
+    <section>
+      <h2>Can SingLift improve my voice?</h2>
+      <p>
+        SingLift does not guarantee voice improvement.
+        It can help you observe changes in vocal steadiness in real time, but improvement depends on
+        your own practice, technique, physical condition, and training environment.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why does the result change when I breathe or stop singing?</h2>
+      <p>
+        SingLift measures the current voice input.
+        When you breathe, stop singing, speak softly, or produce an unclear tone,
+        the app may temporarily return to a weaker state or stop showing a measurement value.
+        This is expected behavior.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why does SingLift use only WEAK, FAIR, and STRONG?</h2>
+      <p>
+        SingLift is designed to be simple and easy to read while using your voice.
+        Instead of showing too many technical states, the app summarizes the current measurement
+        into three practical states: WEAK, FAIR, and STRONG.
+      </p>
+    </section>
+
+    <section>
+      <h2>Is the stability value a ranking?</h2>
+      <p>
+        No. SingLift is not a ranking system and does not compare users.
+        The stability value is only a real-time measurement of the current voice input
+        under the current conditions.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        © Blue Arc Studio. SingLift is a real-time vocal stability and voice steadiness meter.
+      </p>
+      <p>
+        Contact: <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
+
 
