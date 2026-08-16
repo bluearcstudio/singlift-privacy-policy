@@ -1,624 +1,148 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>SingLift — Vocal Stability Instrument</title>
-
-<meta
- name="description"
- content="SingLift is a simple real-time tool for observing vocal steadiness. No recording, no voice storage, no cloud upload, and processed on your device."
-/>
-
-  <meta name="author" content="Blue Arc Studio" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0f1420" />
-
+  <title>SingLift Sustain | Stable Sustained-Tone Duration</title>
+  <meta name="description" content="SingLift Sustain is a quiet app for measuring stable sustained-tone duration. Audio is not recorded or uploaded, and 5 measurement days are included." />
   <link rel="canonical" href="https://singlift.app/" />
-
-  <meta property="og:title" content="SingLift — Vocal Stability Instrument" />
-  <meta
-    property="og:description"
-    content="A simple real-time tool for observing vocal steadiness. No recording. No voice storage. No cloud upload."
-  />
+  <meta property="og:title" content="SingLift Sustain | Stable Sustained-Tone Duration" />
+  <meta property="og:description" content="A quiet instrument for measuring stable sustained-tone duration. Audio is not recorded or uploaded." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://singlift.app/" />
-  <meta property="og:site_name" content="SingLift" />
-  <meta property="og:locale" content="en_US" />
-
+  <meta property="og:site_name" content="SingLift Sustain" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="SingLift — Vocal Stability Instrument" />
-  <meta
-    name="twitter:description"
-    content="A simple real-time tool for observing vocal steadiness."
-  />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "SingLift",
-    "applicationCategory": "MusicApplication",
-    "operatingSystem": "Android",
-    "url": "https://singlift.app/",
-    "description": "SingLift is a simple real-time tool for observing vocal steadiness.",
-    "author": {
-      "@type": "Organization",
-      "name": "Blue Arc Studio",
-      "url": "https://bluearcstudio.com/",
-      "email": "support@bluearcstudio.com"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>
-
-  <style>
-    :root {
-      --bg: #eef3f7;
-      --ink: #111827;
-      --muted: #5f6876;
-      --soft-muted: #8791a1;
-      --line: #dce6ee;
-      --dark: #0f1420;
-      --accent: #29c7ff;
-      --accent-2: #55d9ff;
-      --accent-dark: #0b5d84;
-      --accent-soft: #eaf8ff;
-      --card: rgba(255, 255, 255, 0.94);
-      --shadow: rgba(15, 20, 32, 0.10);
-      --shadow-soft: rgba(15, 20, 32, 0.06);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif;
-      line-height: 1.75;
-      background:
-        radial-gradient(circle at top left, rgba(41, 199, 255, 0.18), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(15, 20, 32, 0.10), transparent 34%),
-        var(--bg);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: var(--accent-dark);
-      font-weight: 700;
-      text-decoration: none;
-      text-underline-offset: 4px;
-      cursor: pointer;
-    }
-
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 30px 28px 72px;
-    }
-
-    .nav {
-      max-width: 980px;
-      margin: 0 auto 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--dark);
-      font-size: 14px;
-      font-weight: 850;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 18px rgba(41, 199, 255, 0.70);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      position: relative;
-      z-index: 5;
-    }
-
-    .hero {
-      max-width: 980px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(15, 20, 32, 0.98), rgba(21, 29, 44, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 38px;
-      padding: 64px 58px;
-      box-shadow: 0 28px 80px var(--shadow);
-      color: #ffffff;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 78% 18%, rgba(41, 199, 255, 0.30), transparent 30%),
-        radial-gradient(circle at 18% 86%, rgba(85, 217, 255, 0.15), transparent 34%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 18px;
-      padding: 8px 13px;
-      border: 1px solid rgba(85, 217, 255, 0.38);
-      border-radius: 999px;
-      background: rgba(41, 199, 255, 0.10);
-      color: #b9efff;
-      font-size: 13px;
-      font-weight: 850;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      color: #ffffff;
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.06;
-      letter-spacing: -0.055em;
-    }
-
-    .subtitle {
-      max-width: 680px;
-      margin: 22px 0 0;
-      color: rgba(255, 255, 255, 0.80);
-      font-size: 19px;
-      line-height: 1.65;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 850;
-      text-decoration: none;
-      transition: transform 0.16s ease, box-shadow 0.16s ease;
-    }
-
-    .button:hover,
-    .button:focus {
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
-    .button-primary {
-      color: #07131a;
-      background: var(--accent);
-      box-shadow: 0 16px 32px rgba(41, 199, 255, 0.18);
-    }
-
-    .button-secondary {
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.26);
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .note {
-      margin-top: 18px;
-      color: rgba(255, 255, 255, 0.58);
-      font-size: 14px;
-    }
-
-    .section {
-      max-width: 980px;
-      margin: 30px auto 0;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 36px 40px;
-      box-shadow: 0 14px 40px var(--shadow-soft);
-      backdrop-filter: blur(8px);
-    }
-
-    .section h2 {
-      margin: 0 0 14px;
-      color: var(--ink);
-      font-size: 30px;
-      line-height: 1.24;
-      letter-spacing: -0.035em;
-    }
-
-    .section p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 16.5px;
-    }
-
-    .section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 24px;
-    }
-
-    .feature {
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .feature h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-    }
-
-    .feature p {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .privacy-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 22px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .privacy-list li {
-      padding: 15px 16px;
-      border: 1px solid #c8dbe8;
-      border-radius: 18px;
-      background: var(--accent-soft);
-      color: #17445c;
-      font-size: 15px;
-      font-weight: 750;
-    }
-
-    .small-label {
-      display: inline-flex;
-      margin-bottom: 12px;
-      padding: 6px 11px;
-      border-radius: 999px;
-      background: rgba(41, 199, 255, 0.12);
-      color: var(--accent-dark);
-      font-size: 12px;
-      font-weight: 850;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .footer {
-      max-width: 980px;
-      margin: 34px auto 0;
-      padding: 28px 4px 0;
-      border-top: 1px solid rgba(164, 176, 190, 0.40);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      color: var(--soft-muted);
-      font-size: 14px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 860px) {
-      .page {
-        padding: 24px 16px 52px;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .hero {
-        padding: 44px 28px;
-        border-radius: 30px;
-      }
-
-      .section {
-        padding: 30px 24px;
-      }
-
-      .grid,
-      .privacy-list {
-        grid-template-columns: 1fr;
-      }
-
-      .footer {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .page {
-        padding: 18px 12px 42px;
-      }
-
-      .hero {
-        padding: 34px 22px;
-      }
-
-      .subtitle {
-        font-size: 16.5px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-  </style>
-
+  <meta name="twitter:title" content="SingLift Sustain | Stable Sustained-Tone Duration" />
+  <meta name="twitter:description" content="A quiet app for measuring stable sustained-tone duration, with audio handled on device." />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+  <script src="/assets/js/site.js" defer></script>
 </head>
-
 <body>
-  <main class="page">
-    <nav class="nav" aria-label="Primary navigation">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
-        SingLift
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-current="page">SingLift Sustain</a>
+        <div class="nav-links">
+          <a href="/" aria-current="page">Home</a>
+          <a href="/how-it-works/">How It Works</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/support/">Support</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section hero home-hero" aria-labelledby="hero-title">
+        <div class="inner">
+          <div class="hero-content">
+            <h1 id="hero-title">SingLift Sustain</h1>
+            <p class="lead">A quiet instrument for measuring stable sustained-tone duration.</p>
+            <div class="actions">
+              <a class="button" href="/how-it-works/">How it works</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-measures" aria-labelledby="measures-title">
+        <div class="inner reading">
+          <h2 id="measures-title">Measure stable sustained-tone duration.</h2>
+          <p class="body-copy">SingLift Sustain measures how long a sustained tone remains stable during use. It is built for a focused long-tone moment, where vocal stability and pitch stability matter more than a score.</p>
+          <p class="body-copy">The result is a duration measurement, not an evaluation of your voice.</p>
+        </div>
+      </section>
+
+      <section class="section home-experience" aria-labelledby="experience-title">
+        <div class="inner feature-width">
+          <div class="app-feature app-feature-primary">
+            <div class="section-header">
+              <h2 id="experience-title">A clear view while you measure.</h2>
+              <p class="body-copy">The Measure experience is quiet and direct: start a measurement, sustain a tone, and read the stable duration without unnecessary distraction.</p>
+              <p class="body-copy">Its priority is the live measurement itself, with restrained visual feedback and legible numerical emphasis.</p>
+            </div>
+            <figure class="app-screen app-screen-measure" aria-label="SingLift Sustain Measure screen">
+              <button class="screen-trigger" type="button" aria-label="Enlarge Measure screen">
+                <img
+                  class="framed-app-image"
+                  src="/assets/images/singlift_measure_framed_final.png"
+                  width="344"
+                  height="738"
+                  alt="SingLift Sustain Measure screen showing stable duration and pitch."
+                />
+              </button>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section warm-band home-privacy" aria-labelledby="privacy-title">
+        <div class="inner reading">
+          <h2 id="privacy-title">Audio is not recorded or uploaded.</h2>
+          <p class="body-copy">Audio files are not stored. Raw microphone input and singing content are not saved. Measurement results are saved on your device.</p>
+          <div class="actions">
+            <a class="button" href="/privacy/">Read the privacy policy</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-history" aria-labelledby="history-title">
+        <div class="inner feature-width">
+          <div class="app-feature app-feature-secondary">
+            <div class="section-header">
+              <h2 id="history-title">Review measurement history and personal best.</h2>
+              <p class="body-copy">Completed measurements can be reviewed in measurement history. Personal Best gives a simple reference point for the longest stable duration saved on your device.</p>
+            </div>
+            <figure class="app-screen app-screen-history" aria-label="SingLift Sustain History screen">
+              <button class="screen-trigger" type="button" aria-label="Enlarge History screen">
+                <img
+                  class="framed-app-image"
+                  src="/assets/images/singlift_history_framed_final.png"
+                  width="310"
+                  height="668"
+                  alt="SingLift Sustain History screen showing personal best and recent measurements."
+                />
+              </button>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section purchase-section" aria-labelledby="purchase-title">
+        <div class="inner reading">
+          <h2 id="purchase-title"><span class="keep-together">5 measurement days</span> included.</h2>
+          <p class="body-copy">Continued measurement after the included days requires a one-time purchase.</p>
+          <p class="quiet-note">No subscription. No automatic renewal. No ads.</p>
+          <p class="quiet-note">A measurement day is defined in the FAQ.</p>
+        </div>
+      </section>
+
+      <section class="section home-limitations" aria-labelledby="limitations-title">
+        <div class="inner reading">
+          <h2 id="limitations-title">A measurement tool, not instruction or diagnosis.</h2>
+          <p class="body-copy">SingLift Sustain does not provide medical advice, diagnosis, singing instruction, scores, rankings, or a guarantee of improvement.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>SingLift Sustain by Blue Arc Studio.</p>
+        <div class="footer-links">
+          <a href="/how-it-works/">How It Works</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/support/">Support</a>
+          <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
+        </div>
       </div>
-
-```
-  <div class="nav-links">
-    <a href="https://singlift.app/">SingLift Home</a>
-    <a href="https://singlift.app/privacy/">Privacy Policy</a>
-    <a href="https://singlift.app/technical-note/">FAQ / Technical Note</a>
-    <a href="https://bluearcstudio.com/">Blue Arc Studio</a>
-    <a href="mailto:support@bluearcstudio.com">Contact</a>
+    </footer>
   </div>
-</nav>
-
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-inner">
-    <div class="eyebrow">Vocal Stability Instrument</div>
-
-    <h1 id="hero-title">
-      A simple real-time tool for observing vocal steadiness.
-    </h1>
-
-    <p class="subtitle">
-      SingLift helps you observe vocal stability in real time during focused
-      voice practice. It is designed to be simple, calm, and privacy-friendly.
-    </p>
-
-    <div class="hero-actions">
-      <a class="button button-primary" href="https://singlift.app/privacy/">
-        View Privacy Policy
-      </a>
-
-      <a class="button button-secondary" href="https://singlift.app/technical-note/">
-        Read FAQ / Technical Note
-      </a>
+  <dialog class="screen-lightbox" id="screen-lightbox" aria-label="Enlarged app screen">
+    <button class="lightbox-close" type="button" aria-label="Close enlarged screen">Close</button>
+    <div class="lightbox-device">
+      <img class="lightbox-image" alt="" />
     </div>
-
-    <p class="note">
-      Android app by Blue Arc Studio. Google Play listing is in preparation.
-    </p>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="what-title">
-  <span class="small-label">What it does</span>
-
-  <h2 id="what-title">
-    Observe voice steadiness in real time.
-  </h2>
-
-  <p>
-    SingLift is not a singing score, diagnosis, or lesson service.
-    It is a focused instrument for checking how steady your voice appears
-    during a sustained vocal sound.
-  </p>
-
-  <p>
-    The app shows simple real-time feedback so you can observe changes in
-    vocal steadiness while using your own voice.
-  </p>
-
-  <div class="grid" aria-label="Main features">
-    <div class="feature">
-      <h3>Real-time feedback</h3>
-      <p>
-        See vocal steadiness feedback while you are using your voice.
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>Simple display</h3>
-      <p>
-        Designed around clear states, so you can focus on the sound itself.
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>Focused voice practice</h3>
-      <p>
-        Useful before or during personal voice practice when you want a calm reference.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="privacy-title">
-  <span class="small-label">Privacy-first design</span>
-
-  <h2 id="privacy-title">
-    No recording. No cloud upload.
-  </h2>
-
-  <p>
-    SingLift is designed so that voice analysis happens on your device.
-    The current version does not use advertising SDKs, analytics SDKs,
-    user accounts, or cloud-based voice processing.
-  </p>
-
-  <ul class="privacy-list">
-    <li>No voice recording</li>
-    <li>No voice storage</li>
-    <li>No cloud upload</li>
-    <li>No user account required</li>
-    <li>No advertising SDKs</li>
-    <li>Processed on your device</li>
-  </ul>
-</section>
-
-<section class="section" aria-labelledby="purchase-title">
-  <span class="small-label">Purchase model</span>
-
-  <h2 id="purchase-title">
-    One-time purchase. No subscription.
-  </h2>
-
-  <p>
-    SingLift is planned as a paid app through Google Play.
-    It is designed as a one-time purchase app, not a subscription service.
-  </p>
-
-  <p>
-    Payment transactions are processed by Google Play. Blue Arc Studio does
-    not collect, store, or have access to your credit card details or other
-    payment information.
-  </p>
-</section>
-
-<section class="section" aria-labelledby="not-title">
-  <span class="small-label">Important note</span>
-
-  <h2 id="not-title">
-    SingLift is a simple observation tool.
-  </h2>
-
-  <p>
-    SingLift does not provide medical advice, voice diagnosis, professional
-    instruction, or a guarantee of vocal improvement.
-  </p>
-
-  <p>
-    It is intended as a simple real-time tool for observing vocal steadiness
-    during focused voice practice.
-  </p>
-</section>
-
-<section class="section" aria-labelledby="links-title">
-  <span class="small-label">Learn more</span>
-
-  <h2 id="links-title">
-    Privacy Policy and technical details.
-  </h2>
-
-  <p>
-    For details about microphone access, on-device processing, purchases,
-    and data handling, please read the Privacy Policy.
-  </p>
-
-  <p>
-    For information about how SingLift interprets vocal steadiness and what
-    the displayed states mean, please read the FAQ / Technical Note.
-  </p>
-
-  <div class="hero-actions">
-    <a class="button button-primary" href="https://singlift.app/privacy/">
-      Privacy Policy
-    </a>
-
-    <a class="button button-secondary" href="https://singlift.app/technical-note/">
-      FAQ / Technical Note
-    </a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div>
-    © 2026 Blue Arc Studio.
-  </div>
-
-  <div class="footer-links">
-    <a href="https://singlift.app/">SingLift Home</a>
-    <a href="https://singlift.app/privacy/">Privacy Policy</a>
-    <a href="https://singlift.app/technical-note/">FAQ / Technical Note</a>
-    <a href="https://bluearcstudio.com/">Blue Arc Studio</a>
-    <a href="mailto:support@bluearcstudio.com">support@bluearcstudio.com</a>
-  </div>
-</footer>
-```
-
-  </main>
+  </dialog>
 </body>
 </html>
